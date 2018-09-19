@@ -19,7 +19,7 @@ library(tidyverse)
 ```{r df_problem1}
 set.seed(2)
 
-Problem1_df = tibble(
+problem_1_df = tibble(
   vec_numeric = runif(10, max = 5, min = 0),
   vec_char = c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j"),
   vec_logical = c(vec_numeric > 2),
@@ -29,33 +29,33 @@ Problem1_df = tibble(
 
 ##Finding mean of variables
 
-`r mean(Problem1_df$vec_numeric)`
+`r mean(problem_1_df$vec_numeric)`
 
-`r mean(Problem1_df$vec_char)`
+`r mean(problem_1_df$vec_char)`
 
-`r mean(Problem1_df$vec_logical)`
+`r mean(problem_1_df$vec_logical)`
 
-`r mean(Problem1_df$vec_factor)`
+`r mean(problem_1_df$vec_factor)`
 
 ##Description of the means/results
 
-* Finding the mean of the vec_numeric variable works because it is a numerical value and can be added and divided (which are the two operations needed to find the mean). This mean is equal to `r mean(Problem1_df$vec_numeric)`
+* Finding the mean of the vec_numeric variable works because it is a numerical value and can be added and divided (which are the two operations needed to find the mean). This mean is equal to `r mean(problem_1_df$vec_numeric)`
 
-* Finding the mean of the vec_char variable doesn't work because it is a character value which doesn't have any numerical value assigned. It is impossible to add and divide, thus when running the mean function we get `r mean(Problem1_df$vec_char)`
+* Finding the mean of the vec_char variable doesn't work because it is a character value which doesn't have any numerical value assigned. It is impossible to add and divide, thus when running the mean function we get `r mean(problem_1_df$vec_char)`
 
-* Finding the mean of the vec_logical varaible gives a result. The result is the proportion of TRUE values in the entire dataset. TRUE values are given the numerical value of 1. Therefore, since there are 7 TRUE values, and 10 total values in the dataset, when running the mean function I get `r mean(Problem1_df$vec_logical)`
+* Finding the mean of the vec_logical varaible gives a result. The result is the proportion of TRUE values in the entire dataset. TRUE values are given the numerical value of 1. Therefore, since there are 7 TRUE values, and 10 total values in the dataset, when running the mean function I get `r mean(problem_1_df$vec_logical)`
 
-* Finding the mean of the vec_factor variable does not work because I have given that variable character values with no numerical values assigned. It is impossible to add and divide, thus when running the mean function we get `r mean(Problem1_df$vec_factor)`
+* Finding the mean of the vec_factor variable does not work because I have given that variable character values with no numerical values assigned. It is impossible to add and divide, thus when running the mean function we get `r mean(problem_1_df$vec_factor)`
 
 
-```{r convert varaible type, include = FALSE}
+```{r convert varaible type, results = 'hide'}
 ##Converting Variables from one type to another 
 
-as.numeric(Problem1_df$vec_char)
+as.numeric(problem_1_df$vec_char)
 
-as.numeric(Problem1_df$vec_logical)
+as.numeric(problem_1_df$vec_logical)
 
-as.numeric(Problem1_df$vec_factor)
+as.numeric(problem_1_df$vec_factor)
 ```
 
 ##Explanation for what happened when converting variables
@@ -64,18 +64,34 @@ as.numeric(Problem1_df$vec_factor)
 ##Converting Character Variable to Factor to Numeric
 
 ```{r convert Character to Factor to Numeric}
-as.factor(Problem1_df$vec_char)
-as.numeric(as.factor(Problem1_df$vec_char))
+as.factor(problem_1_df$vec_char)
+as.numeric(as.factor(problem_1_df$vec_char))
 ```
 
 ##Converting Factor Variable to Character to Numeric
 ```{r convert Factor to Character to Numeric}
-as.character(Problem1_df$vec_factor)
-as.numeric(as.character(Problem1_df$vec_factor))
+as.character(problem_1_df$vec_factor)
+as.numeric(as.character(problem_1_df$vec_factor))
 ```
 
 ##Explaining Conversions
 
 * I was able to convert the character variable to a numeric variable by converting it to a factor in between. This gave each value the ability to be given a numerical value. However, I was not able to convert from a factor variable to a character to a numeric because a numeric value wasn't assigned to the characters. It can be assigned if they were factors.  
+
+#Problem 2
+
+##Creating dataframe for problem 2
+
+```{r df_Problem2}
+set.seed(12)
+
+problem_2_df = tibble(
+  x = rnorm(1000),
+  y = rnorm(1000),
+  vec_logical = (x + y > 0),
+  vec_numeric = (as.numeric(problem_2_df$vec_logical)),
+  vec_factor = (as.factor(problem_2_df$vec_logical))
+)
+```
 
 
