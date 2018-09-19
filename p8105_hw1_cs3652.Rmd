@@ -27,4 +27,10 @@ Problem1_df = tibble(
 )
 ```
 
+##Finding mean of variables
+
+`r mean(Problem1_df$vec_numeric)`
+`r mean(Problem1_df$vec_char)`
+`r mean(Problem1_df$vec_logical)`
+`r mean(Problem1_df$vec_factor)`
 
