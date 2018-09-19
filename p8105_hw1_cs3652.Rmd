@@ -34,3 +34,14 @@ Problem1_df = tibble(
 `r mean(Problem1_df$vec_logical)`
 `r mean(Problem1_df$vec_factor)`
 
+##Description of the means/results
+
+- Finding the mean of the vec_numeric variable works because it is a numerical value and can be added and divided (which are the two operations needed to find the mean). This mean is equal to `r mean(Problem1_df$vec_numeric)`
+
+- Finding the mean of the vec_char variable doesn't work because it is a character value which doesn't have any numerical value assigned. It is impossible to add and divide, thus when running the mean function we get `r mean(Problem1_df$vec_char)`
+
+- Finding the mean of the vec_logical varaible gives a result. The result is the proportion of TRUE values in the entire dataset. TRUE values are given the numerical value of 1. Therefore, since there are 7 TRUE values, and 10 total values in the dataset, when running the mean function we get `r mean(Problem1_df$vec_logical)`
+
+- Finding the mean of the vec_factor variable does not work because I have given that variable character values with no numerical values assigned. It is impossible to add and divide, thus when running the mean function we get `r mean(Problem1_df$vec_factor)`
+
+

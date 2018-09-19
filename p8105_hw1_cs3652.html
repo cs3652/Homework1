@@ -149,6 +149,12 @@ Problem1_df = tibble(
 <div id="finding-mean-of-variables" class="section level2">
 <h2>Finding mean of variables</h2>
 <p>2.7482794 NA 0.7 NA</p>
+<ul>
+<li><p>Finding the mean of the vec_numeric variable works because it is a numerical value and can be added and divided (which are the two operations needed to find the mean). This mean is equal to 2.7482794</p></li>
+<li><p>Finding the mean of the vec_char variable doesn’t work because it is a character value which doesn’t have any numerical value assigned. It is impossible to add and divide, thus when running the mean function we get NA</p></li>
+<li><p>Finding the mean of the vec_logical varaible gives a result. The result is the proportion of TRUE values in the entire dataset. TRUE values are given the numerical value of 1. Therefore, since there are 7 TRUE values, and 10 total values in the dataset, when running the mean function we get 0.7</p></li>
+<li><p>Finding the mean of the vec_factor variable does not work because I have given that variable character values with no numerical values assigned. It is impossible to add and divide, thus when running the mean function we get NA</p></li>
+</ul>
 </div>
 
 
