@@ -129,9 +129,8 @@ $(document).ready(function () {
 </div>
 
 
-<div id="problem-1" class="section level2">
-<h2>Problem 1</h2>
-</div>
+<div id="problem-1" class="section level1">
+<h1>Problem 1</h1>
 <div id="loading-tidyverse" class="section level2">
 <h2>loading tidyverse</h2>
 </div>
@@ -158,7 +157,7 @@ Problem1_df = tibble(
 <ul>
 <li><p>Finding the mean of the vec_numeric variable works because it is a numerical value and can be added and divided (which are the two operations needed to find the mean). This mean is equal to 2.7482794</p></li>
 <li><p>Finding the mean of the vec_char variable doesn’t work because it is a character value which doesn’t have any numerical value assigned. It is impossible to add and divide, thus when running the mean function we get NA</p></li>
-<li><p>Finding the mean of the vec_logical varaible gives a result. The result is the proportion of TRUE values in the entire dataset. TRUE values are given the numerical value of 1. Therefore, since there are 7 TRUE values, and 10 total values in the dataset, when running the mean function we get 0.7</p></li>
+<li><p>Finding the mean of the vec_logical varaible gives a result. The result is the proportion of TRUE values in the entire dataset. TRUE values are given the numerical value of 1. Therefore, since there are 7 TRUE values, and 10 total values in the dataset, when running the mean function I get 0.7</p></li>
 <li><p>Finding the mean of the vec_factor variable does not work because I have given that variable character values with no numerical values assigned. It is impossible to add and divide, thus when running the mean function we get NA</p></li>
 </ul>
 </div>
@@ -170,6 +169,27 @@ Problem1_df = tibble(
 </div>
 <div id="converting-character-variable-to-factor-to-numeric" class="section level2">
 <h2>Converting Character Variable to Factor to Numeric</h2>
+<pre class="r"><code>as.factor(Problem1_df$vec_char)</code></pre>
+<pre><code>##  [1] a b c d e f g h i j
+## Levels: a b c d e f g h i j</code></pre>
+<pre class="r"><code>as.numeric(as.factor(Problem1_df$vec_char))</code></pre>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+</div>
+<div id="converting-factor-variable-to-character-to-numeric" class="section level2">
+<h2>Converting Factor Variable to Character to Numeric</h2>
+<pre class="r"><code>as.character(Problem1_df$vec_factor)</code></pre>
+<pre><code>##  [1] &quot;knicks&quot;    &quot;raptors&quot;   &quot;nets&quot;      &quot;celtics&quot;   &quot;sixers&quot;   
+##  [6] &quot;cavaliers&quot; &quot;bulls&quot;     &quot;pacers&quot;    &quot;pistons&quot;   &quot;bucks&quot;</code></pre>
+<pre class="r"><code>as.numeric(as.character(Problem1_df$vec_factor))</code></pre>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
+<pre><code>##  [1] NA NA NA NA NA NA NA NA NA NA</code></pre>
+</div>
+<div id="explaining-conversions" class="section level2">
+<h2>Explaining Conversions</h2>
+<ul>
+<li>I was able to convert the character variable to a numeric variable by converting it to a factor in between. This gave each value the ability to be given a numerical value. However, I was not able to convert from a factor variable to a character to a numeric because a numeric value wasn’t assigned to the characters. It can be assigned if they were factors.</li>
+</ul>
+</div>
 </div>
 
 
