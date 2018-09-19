@@ -5,15 +5,26 @@ date: '2018-09-18'
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 ##Problem 1
 
-##Creating a dataframe comprising of a random sample of 10 
+##loading tidyverse
 
-```{r} 
+```{r setup, include = FALSE} 
 library(tidyverse)
 ```
+
+##Creating a dataframe comprising of a random sample of 10 
+
+```{r df_problem1}
+set.seed(2)
+
+Problem1_df = tibble(
+  vec_numeric = runif(10, max = 5, min = 0),
+  vec_char = c("a", "b", "c", "d", "e", "f", "g", "h", "i", "j"),
+  vec_logical = c(vec_numeric > 2),
+  vec_factor = factor(c("knicks", "raptors", "nets", "celtics", "sixers", "cavaliers", "bulls", "pacers", "pistons", "bucks"))
+)
+```
+
 
