@@ -1,0 +1,19 @@
+---
+title: "p8105_hw1_cs3652"
+author: "Chirag Shah"
+date: '2018-09-18'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##Problem 1
+
+##Creating a dataframe comprising of a random sample of 10 
+
+```{r} 
+library(tidyverse)
+```
+
