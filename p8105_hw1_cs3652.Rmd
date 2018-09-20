@@ -94,4 +94,6 @@ problem_2_df = tibble(
 )
 ```
 
+## Description of My Vector 
 
+This dataset is of size `r nrow(problem_2_df)`. The mean of x is `r mean(problem_2_df$x)`, and the median of x is `r median(problem_2_df$x)`. The proportion of vec_logical (my variable that states whether x+y is truly greater than 0) is true is `r mean(problem_2_df$vec_logical)`.
