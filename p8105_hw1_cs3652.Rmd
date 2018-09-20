@@ -97,3 +97,27 @@ problem_2_df = tibble(
 ## Description of My Vector 
 
 This dataset is of size `r nrow(problem_2_df)`. The mean of x is `r mean(problem_2_df$x)`, and the median of x is `r median(problem_2_df$x)`. The proportion of vec_logical (my variable that states whether x+y is truly greater than 0) is true is `r mean(problem_2_df$vec_logical)`.
+
+## Creating a scatterplot of y vs x
+
+```{r scatterplot}
+ggplot(problem_2_df, aes(x = x, y = y, color = vec_logical)) + geom_point()
+```
+##ggsave(hw1_prob2_yvsx, plot = last_plot(), device = jpeg, path = /Users/chiragshah/Documents/Data Science/P8105-Homework1/hw1_prob2_yvsx)
+
+##Creating a scatterplot of y vs x with colored points by the numeric variables
+
+```{r scatterplot numeric}
+ggplot(problem_2_df, aes(x = x, y = y, color = x, color = y)) + geom_point()
+```
+
+The color scale in this graph is a spectrum of the color blue instead of a distict color for a dichotomous measure. 
+
+##Creating a scatterplot of y vs x with colored points by the factor variables
+
+```{r scatterplot factor}
+ggplot(problem_2_df, aes(x = x, y = y, color = vec_factor)) + geom_point()
+```
+
+The color scale in this graph is the same as the first scatterplot. There is a distict color given for when the logical variable is true and false. 
+
