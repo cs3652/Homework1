@@ -89,8 +89,8 @@ problem_2_df = tibble(
   x = rnorm(1000),
   y = rnorm(1000),
   vec_logical = (x + y > 0),
-  vec_numeric = (as.numeric(problem_2_df$vec_logical)),
-  vec_factor = (as.factor(problem_2_df$vec_logical))
+  vec_numeric = (as.numeric(vec_logical)),
+  vec_factor = (as.factor(vec_logical))
 )
 ```
 
