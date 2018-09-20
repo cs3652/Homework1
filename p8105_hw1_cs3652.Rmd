@@ -103,7 +103,10 @@ This dataset is of size `r nrow(problem_2_df)`. The mean of x is `r mean(problem
 ```{r scatterplot}
 ggplot(problem_2_df, aes(x = x, y = y, color = vec_logical)) + geom_point()
 ```
-##ggsave(hw1_prob2_yvsx, plot = last_plot(), device = jpeg, path = /Users/chiragshah/Documents/Data Science/P8105-Homework1/hw1_prob2_yvsx)
+
+```{r echo = FALSE}
+ggsave("./Hw1Prob2Plot.jpeg")
+```
 
 ##Creating a scatterplot of y vs x with colored points by the numeric variables
 
